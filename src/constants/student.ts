@@ -1,7 +1,7 @@
 // TH2 | 23727851 | PHAN XUAN DUNG | #997321
 export const STUDENT = {
     mssv: '23727851',
-    hoTen: 'PHAN XUÂN DŨNG',
+    hoTen: 'PHAN XUAN DUNG',
 } as const;
 
 const soCuoi = Number(STUDENT.mssv.slice(-1));
