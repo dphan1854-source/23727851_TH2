@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useQuery } from '@tanstack/react-query';
-import * as Haptics from 'expo-haptics';
+import * as Haptics from '../shims/expo-haptics';
 import { fetchProductDetail } from '@services/productApi';
 import { Watermark } from '@components/Watermark';
 import { useCartStore } from '@stores/cartStore';

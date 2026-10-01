@@ -1,7 +1,7 @@
 // TH2 | 23727851 | PHAN XUAN DUNG | #997321
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import * as Haptics from 'expo-haptics';
+import * as Haptics from '../shims/expo-haptics';
 import { Product } from '@services/productApi';
 import { PRICE_MULTIPLIER } from '@constants/student';
 import { COLORS } from '@constants/theme';

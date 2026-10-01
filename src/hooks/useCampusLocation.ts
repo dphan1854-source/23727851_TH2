@@ -1,5 +1,6 @@
+// TH2 | 23727851 | PHAN XUAN DUNG | #997321
 import { useState } from 'react';
-import * as Location from 'expo-location';
+import * as Location from '../shims/expo-location';
 import { BASE_SHIP_FEE, STUDENT } from '@constants/student';
 
 // Tọa độ cổng KTX cố định

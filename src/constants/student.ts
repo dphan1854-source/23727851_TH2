@@ -17,7 +17,7 @@ export const BANNER_IMAGE_ID = 200 + (STUDENT_SEED % 150);
 
 export const VARIANT = {
     watermarkAtTop: LAST_DIGIT % 2 === 0,
-    authField: LAST_DIGIT % 2 === 0 ? 'email' : 'phone',
+    authField: 'email',
     tabOrder: LAST_DIGIT >= 5 ? 'cartFirst' : 'shopFirst',
     hapticOnAdd: LAST_DIGIT % 3 === 0 ? 'impact' : 'selection',
     shipFormula: LAST_DIGIT % 2 === 0 ? 'A' : 'B',

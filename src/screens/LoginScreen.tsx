@@ -1,6 +1,6 @@
 // TH2 | 23727851 | PHAN XUAN DUNG | #997321
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuthStore } from '@stores/authStore';
 import { Watermark } from '@components/Watermark';
@@ -10,6 +10,19 @@ import { STUDENT, VARIANT } from '@constants/student';
 export const LoginScreen = () => {
     const [input, setInput] = useState('');
     const login = useAuthStore((state) => state.login);
+
+    const handleLogin = () => {
+        const trimmed = input.trim();
+        if (!trimmed) {
+            Alert.alert(
+                'Yêu cầu nhập Email',
+                `Vui lòng nhập Email sinh viên trước khi vào cửa hàng (Ví dụ: ${STUDENT.mssv}@iuh.edu.vn)`
+            );
+            return;
+        }
+        console.log('Logging in with:', trimmed);
+        login(trimmed);
+    };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -22,19 +35,19 @@ export const LoginScreen = () => {
 
                     <TextInput
                         style={styles.input}
-                        placeholder={`Số điện thoại — 09${STUDENT.mssv.slice(-7)}`}
+                        placeholder={`Email — ${STUDENT.mssv}@iuh.edu.vn`}
+                        placeholderTextColor={COLORS.textLight}
                         value={input}
                         onChangeText={setInput}
-                        keyboardType="phone-pad"
+                        keyboardType="email-address"
+                        autoCapitalize="none"
+                        autoCorrect={false}
                     />
 
                     <TouchableOpacity
                         activeOpacity={0.7}
                         style={styles.button}
-                        onPress={() => {
-                            console.log('Logging in with:', input);
-                            login(input);
-                        }}
+                        onPress={handleLogin}
                     >
                         <Text style={styles.buttonText}>Vào cửa hàng</Text>
                     </TouchableOpacity>
