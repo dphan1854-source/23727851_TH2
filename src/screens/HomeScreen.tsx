@@ -27,7 +27,8 @@ export const HomeScreen = ({ navigation }: any) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {VARIANT.watermarkAtTop && <Watermark />}
+      {/* Watermark luôn hiển thị ở phía trên */}
+      <Watermark />
 
       <View style={styles.header}>
         <Text style={styles.headerTitle}>KTXGO</Text>
@@ -71,7 +72,6 @@ export const HomeScreen = ({ navigation }: any) => {
         />
       )}
 
-      {!VARIANT.watermarkAtTop && <Watermark />}
     </SafeAreaView>
   );
 };

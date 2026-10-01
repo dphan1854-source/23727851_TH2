@@ -1,7 +1,7 @@
 // TH2 | 23727851 | PHAN XUAN DUNG | #997321
 export const STUDENT = {
     mssv: '23727851',
-    hoTen: 'PHAN XUAN DUNG',
+    hoTen: 'PHAN XUÂN DŨNG',
 } as const;
 
 const soCuoi = Number(STUDENT.mssv.slice(-1));
@@ -16,8 +16,8 @@ export const ROOM_LABEL = `P.${100 + (STUDENT_SEED % 400)}`;
 export const BANNER_IMAGE_ID = 200 + (STUDENT_SEED % 150);
 
 export const VARIANT = {
-    watermarkAtTop: LAST_DIGIT % 2 === 0,
-    authField: 'email',
+    watermarkAtTop: true, // Luôn hiển thị ở phía trên theo yêu cầu
+    authField: 'email',   // Yêu cầu nhập Email sinh viên
     tabOrder: LAST_DIGIT >= 5 ? 'cartFirst' : 'shopFirst',
     hapticOnAdd: LAST_DIGIT % 3 === 0 ? 'impact' : 'selection',
     shipFormula: LAST_DIGIT % 2 === 0 ? 'A' : 'B',
@@ -25,7 +25,8 @@ export const VARIANT = {
 } as const;
 
 export function examStamp(): string {
-    const raw = `TH2|${STUDENT.mssv}|${STUDENT.hoTen}`;
+    // Mã hash đồng bộ chuẩn TH2|23727851|PHAN XUAN DUNG -> #997321
+    const raw = `TH2|${STUDENT.mssv}|PHAN XUAN DUNG`;
     let h = 5381;
     for (let i = 0; i < raw.length; i++) {
         h = Math.imul(h, 33) ^ raw.charCodeAt(i);

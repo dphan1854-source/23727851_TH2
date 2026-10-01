@@ -12,7 +12,7 @@ export const CartScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {VARIANT.watermarkAtTop && <Watermark />}
+      <Watermark />
       <View style={styles.header}>
         <Text style={styles.headerTitle}>GIỎ HÀNG</Text>
       </View>
@@ -39,7 +39,6 @@ export const CartScreen = () => {
         <Text style={{ color: COLORS.text, fontWeight: 'bold' }}>Giao đến {ROOM_LABEL}</Text>
         <Text style={styles.totalText}>Tổng hàng: {getTotalAmount().toLocaleString('vi-VN')} đ</Text>
       </View>
-      {!VARIANT.watermarkAtTop && <Watermark />}
     </SafeAreaView>
   );
 };

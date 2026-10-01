@@ -17,14 +17,17 @@ export const Watermark = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#DBEAFE',
-        paddingVertical: 6,
+        paddingVertical: 8,
         paddingHorizontal: 12,
         alignItems: 'center',
         justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: '#BFDBFE',
     },
     text: {
-        color: COLORS.text,
-        fontSize: 12,
+        color: COLORS.primary,
+        fontSize: 13,
         fontWeight: 'bold',
+        letterSpacing: 0.5,
     },
 });

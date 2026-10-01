@@ -37,7 +37,7 @@ export const DetailScreen = ({ route, navigation }: any) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.background }}>
-            {VARIANT.watermarkAtTop && <Watermark />}
+            <Watermark />
             <TouchableOpacity onPress={() => navigation.goBack()} style={{ padding: 10 }}>
                 <Text style={{ color: COLORS.primary }}>← Chi tiết món</Text>
             </TouchableOpacity>
@@ -52,7 +52,6 @@ export const DetailScreen = ({ route, navigation }: any) => {
                     <Text style={styles.btnText}>Thêm vào giỏ · Haptic</Text>
                 </TouchableOpacity>
             </View>
-            {!VARIANT.watermarkAtTop && <Watermark />}
         </SafeAreaView>
     );
 };

@@ -14,7 +14,7 @@ export const MeScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            {VARIANT.watermarkAtTop && <Watermark />}
+            <Watermark />
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>TÔI · LOCATION</Text>
             </View>
@@ -47,8 +47,6 @@ export const MeScreen = () => {
                     <Text style={styles.btnText}>Đăng xuất</Text>
                 </TouchableOpacity>
             </View>
-
-            {!VARIANT.watermarkAtTop && <Watermark />}
         </SafeAreaView>
     );
 };
